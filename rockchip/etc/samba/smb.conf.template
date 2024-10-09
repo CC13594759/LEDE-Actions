@@ -1,0 +1,28 @@
+[global]
+	netbios name = |NAME|
+	interfaces = |INTERFACES|
+	server string = |DESCRIPTION|
+	unix charset = |CHARSET|
+	workgroup = |WORKGROUP|
+	fruit:nfs_aces = no
+	inherit permissions = yes
+	bind interfaces only = yes
+	deadtime = 15
+	enable core files = no
+	security = user
+	map to guest = Bad User
+	passdb backend = smbpasswd
+	load printers = No
+	printcap name = /dev/null
+	disable spoolss = yes
+	printing = bsd
+	mdns name = mdns
+	vfs objects = catia fruit streams_xattr
+	socket options = TCP_NODELAY IPTOS_LOWDELAY
+	veto files = /Thumbs.db/.DS_Store/._.DS_Store/.apdisk/filebrowser.db/
+	delete veto files = yes
+	lanman auth = yes
+	ntlm auth = ntlmv1-permitted
+
+
+
