@@ -41,6 +41,10 @@ sed -i "/exit 0/i\sed -i 's/nas/services/g' /usr/lib/lua/luci/view/aria2/overvie
 sed -i 's/vpn/services/g' feeds/luci/applications/luci-app-zerotier/luasrc/view/zerotier/zerotier_status.htm
 sed -i 's/"vpn"/"services"/g; s/"VPN"/"Services"/g' feeds/luci/applications/luci-app-zerotier/luasrc/controller/zerotier.lua
 
+#替换luci源
+sed -i 's|^#src-git luci https://github.com/coolsnowwolf/luci|src-git luci https://github.com/coolsnowwolf/luci|' feeds.conf.default
+sed -i 's|^src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05|#src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05|' feeds.conf.default
+
 # etc默认设置
 #cp -a $GITHUB_WORKSPACE/mtk-7621/etc/* package/base-files/files/etc/
 

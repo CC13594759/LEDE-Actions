@@ -15,11 +15,10 @@ function git_sparse_clone() {
 git clone --depth=1 https://github.com/CC13594759/luci-app-airconnect package/luci-app-airconnect
 
 # 科学上网插件
-git clone --depth=1 https://github.com/fw876/helloworld package/luci-app-ssr-plus
-#git clone --depth=1 -b main https://github.com/fw876/helloworld package/luci-app-ssr-plus
-#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
-#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
-#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
+#git clone --depth=1 https://github.com/fw876/helloworld package/luci-app-ssr-plus
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
 #git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 
 # x86 型号只显示 CPU 型号
@@ -48,6 +47,10 @@ sed -i 's/"ShadowSocksR Plus+"/"SSR Plus"/g' `egrep "ShadowSocksR Plus+" -rl ./`
 sed -i "/exit 0/i\sed -i 's/nas/services/g' /usr/lib/lua/luci/controller/samba4.lua" package/lean/default-settings/files/zzz-default-settings
 sed -i "/exit 0/i\sed -i 's/nas/services/g' /usr/lib/lua/luci/controller/aria2.lua" package/lean/default-settings/files/zzz-default-settings
 sed -i "/exit 0/i\sed -i 's/nas/services/g' /usr/lib/lua/luci/view/aria2/overview_status.htm" package/lean/default-settings/files/zzz-default-settings
+
+#替换luci源
+sed -i 's|^#src-git luci https://github.com/coolsnowwolf/luci|src-git luci https://github.com/coolsnowwolf/luci|' feeds.conf.default
+sed -i 's|^src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05|#src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05|' feeds.conf.default
 
 # etc默认设置
 #cp -a $GITHUB_WORKSPACE/X86_64/etc/* package/base-files/files/etc/
