@@ -1,2 +1,2 @@
-56 23 * * * docker restart nextcloud #定时重启nextcloud 
+56 23 * * 6 docker restart nextcloud #定时重启nextcloud 
 
