@@ -11,7 +11,7 @@ env:
   CONFIG_FILE: rockchip/rockchip.config
   EXTRA_CONFIG: rockchip/extra.config
   DIY_SCRIPT: rockchip/diy.yml
-  CACHE_TOOLCHAIN: false
+  CACHE_TOOLCHAIN: true
   FIRMWARE_RELEASE: true
   FIRMWARE_TAG: Rockchip
   TZ: Asia/Shanghai

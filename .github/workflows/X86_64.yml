@@ -9,7 +9,7 @@ env:
   CONFIG_FILE: X86_64/x86.config
   DIY_SCRIPT: X86_64/diy.yml
   CLASH_KERNEL: amd64
-  CACHE_TOOLCHAIN: false
+  CACHE_TOOLCHAIN: true
   FIRMWARE_RELEASE: true
   FIRMWARE_TAG: X86_64
   TZ: Asia/Shanghai

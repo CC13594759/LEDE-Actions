@@ -10,7 +10,7 @@ env:
   CONFIG_FILE: mtk-7621/mtk.config
   EXTRA_CONFIG: mtk-7621/extra.config
   DIY_SCRIPT: mtk-7621/diy.sh
-  CACHE_TOOLCHAIN: false
+  CACHE_TOOLCHAIN: true
   FIRMWARE_RELEASE: true
   FIRMWARE_TAG: MTK-7621
   TZ: Asia/Shanghai
