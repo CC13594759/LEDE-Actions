@@ -1,6 +1,10 @@
 # 修改默认IP
 sed -i 's/192.168.1.1/192.168.12.1/g' package/base-files/files/bin/config_generate
 
+# 移除要替换的包
+rm -rf feeds/packages/net/mosdns
+rm -rf feeds/luci/applications/luci-app-mosdns
+
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
   branch="$1" repourl="$2" && shift 2
@@ -17,7 +21,7 @@ git clone --depth=1 https://github.com/CC13594759/luci-app-airconnect package/lu
 # 科学上网插件
 #git clone --depth=1 https://github.com/fw876/helloworld package/luci-app-ssr-plus
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
+#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
 
 # 修改本地时间格式
