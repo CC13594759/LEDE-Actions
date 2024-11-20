@@ -1,10 +1,6 @@
 # 修改默认IP
 sed -i 's/192.168.1.1/192.168.12.12/g' package/base-files/files/bin/config_generate
 
-# 移除要替换的包
-rm -rf feeds/packages/net/xray-core
-rm -rf feeds/packages/net/v2ray-geodata
-
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
   branch="$1" repourl="$2" && shift 2
@@ -47,7 +43,7 @@ find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_U
 sed -i 's/EZPRO Mrkaio M68S PLUS/FriendlyElec NanoPi R5C/g' target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/rk3568-mrkaio-m68s-plus.dts
 
 # 修改插件名字
-sed -i 's/"ShadowSocksR Plus+"/"SSR Plus"/g' `egrep "ShadowSocksR Plus+" -rl ./`
+sed -i 's/"PassWall 2"/"PassWall"/g' `egrep "SPassWall 2" -rl ./`
 
 #修改插件位置
 sed -i "/exit 0/i\sed -i 's/nas/services/g' /usr/lib/lua/luci/controller/samba4.lua" package/lean/default-settings/files/zzz-default-settings
