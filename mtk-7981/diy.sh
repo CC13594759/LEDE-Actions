@@ -42,7 +42,7 @@ find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_U
 find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_URL:=@GHCODELOAD/PKG_SOURCE_URL:=https:\/\/codeload.github.com/g' {}
 
 # 修改插件名字
-sed -i 's/"PassWall 2"/"帕斯沃"/g' `egrep "PassWall 2" -rl ./`
+sed -i 's/"PassWall 2"/"PassWall"/g' `egrep "PassWall 2" -rl ./`
 
 #修改插件位置
 sed -i "/exit 0/i\sed -i 's/nas/services/g' /usr/lib/lua/luci/controller/samba4.lua" package/lean/default-settings/files/zzz-default-settings
