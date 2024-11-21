@@ -2,7 +2,7 @@
 <img width="768" src="https://cdn.jsdelivr.net/gh/haiibo/OpenWrt/images/openwrt.png"/>
 <h1>OpenWrt — 固件云编译</h1>
 
-固件构成：[![Lean](https://img.shields.io/badge/Lede-Lean-ff69b4.svg?style=flat&logo=appveyor)](https://github.com/coolsnowwolf/lede)  [![Haiibo](https://img.shields.io/badge/Build-Haiibo-32C955.svg?style=flat&logo=appveyor)](https://github.com/haiibo/OpenWrt)  [![passwall](https://img.shields.io/badge/passwall-xiaorouji-8A2BE2.svg?style=flat&logo=appveyor)](https://github.com/xiaorouji/openwrt-passwall)
+固件构成：[![Lean](https://img.shields.io/badge/Lede-Lean-ff69b4.svg?style=flat&logo=appveyor)](https://github.com/coolsnowwolf/lede)  [![Haiibo](https://img.shields.io/badge/Build-Haiibo-32C955.svg?style=flat&logo=appveyor)](https://github.com/haiibo/OpenWrt)  [![passwall](https://img.shields.io/badge/passwall-xiaorouji-8A2BE2.svg?style=flat&logo=appveyor)](https://github.com/xiaorouji/openwrt-passwall2)
 
 ## 特别提示 [![](https://img.shields.io/badge/-个人免责声明-FFFFFF.svg)](#特别提示-)
 
