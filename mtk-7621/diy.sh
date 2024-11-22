@@ -48,8 +48,7 @@ sed -i 's|^src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05|#
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
+#修改插件位置
 sed -i 's/vpn/services/g' feeds/luci/applications/luci-app-zerotier/luasrc/controller/zerotier.lua
 sed -i 's/VPN/Services/g' feeds/luci/applications/luci-app-zerotier/luasrc/controller/zerotier.lua
 sed -i 's/vpn/services/g' feeds/luci/applications/luci-app-zerotier/luasrc/view/zerotier/zerotier_status.htm
-./scripts/feeds update -a
-./scripts/feeds install -a
