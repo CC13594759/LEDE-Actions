@@ -51,12 +51,6 @@ sed -i 's/"PassWall 2"/"PassWall"/g' `egrep "PassWall 2" -rl ./`
 sed -i "/exit 0/i\sed -i 's/nas/services/g' /usr/lib/lua/luci/controller/samba4.lua" package/lean/default-settings/files/zzz-default-settings
 sed -i "/exit 0/i\sed -i 's/nas/services/g' /usr/lib/lua/luci/controller/aria2.lua" package/lean/default-settings/files/zzz-default-settings
 sed -i "/exit 0/i\sed -i 's/nas/services/g' /usr/lib/lua/luci/view/aria2/overview_status.htm" package/lean/default-settings/files/zzz-default-settings
-sed -i 's/vpn/services/g' luci/applications/luci-app-zerotier/luasrc/controller/zerotier.lua
-sed -i 's/VPN/Services/g' luci/applications/luci-app-zerotier/luasrc/controller/zerotier.lua
-sed -i 's/vpn/services/g' luci/applications/luci-app-zerotier/luasrc/view/zerotier/zerotier_status.htm
-sed -i "/exit 0/i\sed -i 's/vpn/services/g'" luci/applications/luci-app-zerotier/luasrc/controller/zerotier.lua
-sed -i "/exit 0/i\sed -i 's/VPN/Services/g'" luci/applications/luci-app-zerotier/luasrc/controller/zerotier.lua
-sed -i "/exit 0/i\sed -i 's/vpn/services/g'" luci/applications/luci-app-zerotier/luasrc/view/zerotier/zerotier_status.htm
 
 #替换luci源
 sed -i 's|^#src-git luci https://github.com/coolsnowwolf/luci|src-git luci https://github.com/coolsnowwolf/luci|' feeds.conf.default
@@ -65,5 +59,11 @@ sed -i 's|^src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05|#
 # etc默认设置
 cp -a $GITHUB_WORKSPACE/rockchip/etc/* package/base-files/files/etc/
 
+./scripts/feeds update -a
+./scripts/feeds install -a
+
+sed -i 's/vpn/services/g' feeds/luci/applications/luci-app-zerotier/luasrc/controller/zerotier.lua
+sed -i 's/VPN/Services/g' feeds/luci/applications/luci-app-zerotier/luasrc/controller/zerotier.lua
+sed -i 's/vpn/services/g' feeds/luci/applications/luci-app-zerotier/luasrc/view/zerotier/zerotier_status.htm
 ./scripts/feeds update -a
 ./scripts/feeds install -a
