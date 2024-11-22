@@ -48,9 +48,8 @@ sed -i 's/"PassWall 2"/"PassWall"/g' `egrep "PassWall 2" -rl ./`
 sed -i "/exit 0/i\sed -i 's/nas/services/g' /usr/lib/lua/luci/controller/samba4.lua" package/lean/default-settings/files/zzz-default-settings
 sed -i "/exit 0/i\sed -i 's/nas/services/g' /usr/lib/lua/luci/controller/aria2.lua" package/lean/default-settings/files/zzz-default-settings
 sed -i "/exit 0/i\sed -i 's/nas/services/g' /usr/lib/lua/luci/view/aria2/overview_status.htm" package/lean/default-settings/files/zzz-default-settings
-sed -i 's/vpn/services/g' feeds/luci/applications/luci-app-zerotier/luasrc/controller/*.lua
-sed -i 's/VPN/services/g' feeds/luci/applications/luci-app-zerotier/luasrc/controller/*.lua
-sed -i 's/vpn/services/g' feeds/luci/applications/luci-app-zerotier/luasrc/view/zerotier/*.htm
+sed -i 's/vpn/services/g' feeds/luci/applications/luci-app-zerotier/luasrc/view/zerotier/zerotier_status.htm
+sed -i 's/"vpn"/"services"/g; s/"VPN"/"Services"/g' feeds/luci/applications/luci-app-zerotier/luasrc/controller/zerotier.lua
 
 #替换luci源
 sed -i 's|^#src-git luci https://github.com/coolsnowwolf/luci|src-git luci https://github.com/coolsnowwolf/luci|' feeds.conf.default
