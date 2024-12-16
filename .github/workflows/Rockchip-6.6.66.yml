@@ -1,18 +1,19 @@
-name: MTK-7981
+name: Rockchip-6.6.66
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 21 * * 5
+    - cron: 0 22 * * 5
+
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/CC13594759/lede
   REPO_BRANCH: master
-  CONFIG_FILE: mtk-7981/mtk.config
-  EXTRA_CONFIG: mtk-7981/extra.config
-  DIY_SCRIPT: mtk-7981/diy.sh
+  CONFIG_FILE: rockchip/rockchip.config
+  EXTRA_CONFIG: rockchip/extra.config
+  DIY_SCRIPT: rockchip/diy.yml
   CACHE_TOOLCHAIN: true
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: MTK-7981
+  FIRMWARE_TAG: Rockchip-6.6.66
   TZ: Asia/Shanghai
 
 jobs:
@@ -162,7 +163,7 @@ jobs:
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
           - 🚀 内核版本: ${{ env.KERNEL }}
-          - 🌐 默认地址: 192.168.12.1
+          - 🌐 默认地址: 192.168.12.12
           - 🔑 默认密码: password
           ### 🧊 固件版本
           - 主源码更新记录
