@@ -106,7 +106,6 @@ jobs:
         [ -e files ] && mv files $OPENWRT_PATH/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_PATH/.config
         cat $EXTRA_CONFIG >> $OPENWRT_PATH/.config
-        chmod +x $GITHUB_WORKSPACE/rockchip/*.sh
         chmod +x $DIY_SCRIPT
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_SCRIPT
@@ -124,7 +123,6 @@ jobs:
       run: |
         cd $OPENWRT_PATH
         mkdir -p files/etc/uci-defaults
-        cp $GITHUB_WORKSPACE/rockchip/init-settings.sh files/etc/uci-defaults/99-init-settings
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
         echo "status=success" >> $GITHUB_OUTPUT
