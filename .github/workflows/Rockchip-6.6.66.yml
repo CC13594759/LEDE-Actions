@@ -12,7 +12,7 @@ env:
   EXTRA_CONFIG: rockchip/extra.config
   DIY_SCRIPT: rockchip/diy.yml
   CACHE_TOOLCHAIN: true
-  FIRMWARE_RELEASE: true
+  FIRMWARE_RELEASE: false
   FIRMWARE_TAG: Rockchip-6.6.66
   TZ: Asia/Shanghai
 
